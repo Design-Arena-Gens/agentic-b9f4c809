@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --color-luxury-night: #030a1c;
+  --color-luxury-deep: #0b1c3f;
+  --color-luxury-dusk: #11295c;
+  --color-luxury-gold: #d6b25e;
+  --color-luxury-ivory: #f9f5ef;
+  --color-luxury-soft-ivory: #efe9de;
+  --color-luxury-slate: #8ea3c4;
+  --color-luxury-ink: #1c2439;
+  --shadow-floating: 0 35px 70px -28px rgba(9, 22, 54, 0.65);
+}
+
+@theme inline {
+  --color-luxury-night: var(--color-luxury-night);
+  --color-luxury-deep: var(--color-luxury-deep);
+  --color-luxury-dusk: var(--color-luxury-dusk);
+  --color-luxury-gold: var(--color-luxury-gold);
+  --color-luxury-ivory: var(--color-luxury-ivory);
+  --color-luxury-soft-ivory: var(--color-luxury-soft-ivory);
+  --color-luxury-slate: var(--color-luxury-slate);
+  --color-luxury-ink: var(--color-luxury-ink);
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(25, 47, 97, 0.6), transparent 55%),
+    linear-gradient(160deg, var(--color-luxury-night), var(--color-luxury-deep));
+  color: var(--color-luxury-ivory);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(circle at 20% 20%, rgba(214, 178, 94, 0.17), transparent 50%),
+    radial-gradient(circle at 80% 10%, rgba(148, 115, 55, 0.1), transparent 45%);
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: radial-gradient(circle at bottom, rgba(7, 14, 34, 0.85), transparent 60%);
+  pointer-events: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), "Times New Roman", serif;
+  letter-spacing: 0.02em;
+}
+
+.font-display {
+  font-family: var(--font-display), "Times New Roman", serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(214, 178, 94, 0.3);
+  color: var(--color-luxury-ivory);
+}
